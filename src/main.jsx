@@ -14,13 +14,32 @@ function Card(props) {
             <div style={{ display: "flex", flexDirection: "column", textAlign: "center", marginTop: "10px", color: "white" }}>
 
                 <h3 style={{ margin: "5px 0", cursor: "pointer" }}>T-Shirts</h3>
-                <h2 style={{ margin: "5px 0", color: "yellow", cursor: "pointer" }}>{props.firstdis}-{props.seconddis}% Off</h2>
+                <h2 style={{ margin: "5px 0", color: "yellow", cursor: "pointer" }}>{props.discount}</h2>
                 <h4 style={{ margin: "10px 0 0 0", cursor: "pointer" }}>Shop now</h4>
             
             </div>
       </div>
   );
 }
+
+const arr = [
+  { cloth: "T-Shirt", offer: "40-80% Off" },
+  { cloth: "T-Shirt", offer: "40-80% Off" },
+  { cloth: "T-Shirt", offer: "40-50% Off" },
+  { cloth: "T-Shirt", offer: "70-90% Off" },
+  { cloth: "T-Shirt", offer: "40-50% Off" },
+  { cloth: "T-Shirt", offer: "40-80% Off" },
+  { cloth: "T-Shirt", offer: "10-20% Off" },
+  { cloth: "T-Shirt", offer: "40-50% Off" },
+  { cloth: "T-Shirt", offer: "10-20% Off" },
+  { cloth: "T-Shirt", offer: "10-20% Off" },
+  { cloth: "T-Shirt", offer: "70-90% Off" },
+  { cloth: "T-Shirt", offer: "70-90% Off" },
+  { cloth: "T-Shirt", offer: "70-90% Off" },
+  { cloth: "T-Shirt", offer: "70-90% Off" },
+  { cloth: "T-Shirt", offer: "10-20% Off" },
+  { cloth: "T-Shirt", offer: "10-20% Off" }
+];
 
 function Body() {
     return(
@@ -34,7 +53,7 @@ function Body() {
       minHeight: "100vh" ,
       boxSizing: "border-box"
     }}>
-      <Card itempic={item[0]} firstdis="40" seconddis="50" />
+      {/* <Card itempic={item[0]} firstdis="40" seconddis="50" />
       <Card itempic={item[1]} firstdis="20" seconddis="80" />
       <Card itempic={item[0]} firstdis="50" seconddis="60" />
       <Card itempic={item[2]} firstdis="50" seconddis="80" />
@@ -46,7 +65,13 @@ function Body() {
       <Card itempic={item[2]} firstdis="50" seconddis="60" />
       <Card itempic={item[1]} firstdis="50" seconddis="80" />
       <Card itempic={item[1]} firstdis="50" seconddis="80" />
-      <Card itempic={item[2]} firstdis="50" seconddis="80" />
+      <Card itempic={item[2]} firstdis="50" seconddis="80" /> */}
+
+      {
+        arr.map((value,index)=>{
+            return <Card itempic={item[Math.floor(Math.random()*3)]} discount={value.offer} />
+        })
+      }
     </div>
   );
 

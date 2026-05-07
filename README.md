@@ -1,0 +1,1 @@
+we used map but not a traditional for loop as it dont return anything and inside jsx we need an expression not a statement
