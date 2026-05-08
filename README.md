@@ -54,3 +54,22 @@ padding: 50px;
 width: 100%;
 padding: 50px;
 box-sizing: border-box;
+
+React uses the `key` prop as a tracking ID to know exactly which items in a list were added, removed, or changed without re-rendering the entire screen.
+
+**1. The Golden Rule (Always use with `.map`)**
+You MUST provide a unique `key` to the outermost element whenever you use `.map()` to generate a list of components.
+```jsx
+// ✅ RIGHT: The key goes on the outermost wrapper element returned by the map loop.
+{products.map((item) => (
+  <div key={item._id}> 
+    <Card data={item} />
+  </div>
+))}```
+
+You DO NOT need keys when you are manually typing out sibling components one by one. React tracks hardcoded elements naturally.
+
+```<div>
+  <Card data={shirtData} />
+  <Card data={pantsData} />
+</div>```

@@ -69,7 +69,7 @@ function Body() {
 
       {
         arr.map((value,index)=>{
-            return <Card itempic={item[Math.floor(Math.random()*3)]} discount={value.offer} />
+            return <Card key={index} itempic={item[Math.floor(Math.random()*3)]} discount={value.offer} />
         })
       }
     </div>
