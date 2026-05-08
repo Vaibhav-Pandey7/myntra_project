@@ -73,3 +73,11 @@ You DO NOT need keys when you are manually typing out sibling components one by 
   <Card data={shirtData} />
   <Card data={pantsData} />
 </div>```
+
+HTML Tags vs. CSS Makeup: Trying to use CSS (style={{type: "search"}}) to change a <div> into a text box. Fix: Use Conditional Rendering (if/else) to return the correct HTML bone structure (e.g., <input>).
+
+The Object-in-Prop Trap: Wrapping imported SVGs/Images in curly braces inside an object ({ placeholder: {profileicon} }) breaks the image link. Fix: Variables are already objects, just pass the variable directly (placeholder: profileicon).
+
+Flexbox Row Default: Sticking an icon and text in a flex container makes them sit side-by-side. Fix: Use flexDirection: "column" to stack them vertically like a real navbar.
+
+The HTML Attribute vs CSS Property Trap: Writing cursor="pointer" as a raw HTML attribute. Fix: cursor is a styling rule, it must go inside style={{ cursor: "pointer" }}.
