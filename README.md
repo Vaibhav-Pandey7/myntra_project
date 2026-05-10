@@ -81,3 +81,6 @@ The Object-in-Prop Trap: Wrapping imported SVGs/Images in curly braces inside an
 Flexbox Row Default: Sticking an icon and text in a flex container makes them sit side-by-side. Fix: Use flexDirection: "column" to stack them vertically like a real navbar.
 
 The HTML Attribute vs CSS Property Trap: Writing cursor="pointer" as a raw HTML attribute. Fix: cursor is a styling rule, it must go inside style={{ cursor: "pointer" }}.
+
+   
+to shift the icons use position relative to shift from relative place
