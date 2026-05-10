@@ -53,9 +53,8 @@ function Body() {
       flexWrap: "wrap", 
       gap: "20px", 
       padding: "100px 100px 50px 100px",
-      width: "100vw",
+      width: "100%",
       minHeight: "100vh" ,
-      boxSizing: "border-box"
     }}>
       {/* <Card itempic={item[0]} firstdis="40" seconddis="50" />
       <Card itempic={item[1]} firstdis="20" seconddis="80" />
@@ -105,11 +104,11 @@ function Element(props) {
       />
     );
   }else if(props.typ==="img"){
-    return (<img src={props.placeholder} style={{ height: "50px", marginRight: "30px", cursor: "pointer" }} alt="Myntra Logo"/>);
+    return (<img src={props.placeholder} style={{ height: "50px", marginRight: "30px",}} alt="Myntra Logo"/>);
   }else if(props.typ==="icon"){
     return (
       <div style={{margin: "0 15px 0px 15px",display:"flex",justifyContent:"center",alignItems:"center", flexDirection:"column",gap:"1px"}} >
-        <img cursor="pointer" src={props.placeholder} style={{height:"20px",width:"20px"}} alt="Profile logo"/>
+        <img  src={props.placeholder} style={{ cursor:"pointer",height:"20px",width:"20px"}} alt="Profile logo"/>
         <p style={{margin:"0px"}}>{props.tex}</p>
       </div>
     );
@@ -141,7 +140,16 @@ function Header() {
     </div>
   )
 }
-function Footer() {return null;}
+
+
+function Footer() {
+  return (
+    <div style={{display:"flex",justifyContent:"center"}}>
+      <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2026/MAY/6/rcmKI1JX_98050171b0d643d39519c55b0021fd37.jpg" alt="Banner" style={{width:"90%"}}/>
+      
+    </div>
+  );
+}
 
 function App() {
   return (
