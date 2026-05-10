@@ -6,8 +6,6 @@ import bagicon from "./assets/bag.svg";
 import Header  from "./components/Header";
 import Body from "./components/Body";
 import Footer  from "./components/Footer";
-import Element  from "./components/Element";
-import Card  from "./components/Card";
 
 //needs
 //header
