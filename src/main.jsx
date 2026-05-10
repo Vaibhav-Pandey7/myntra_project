@@ -12,26 +12,26 @@ import Footer  from "./components/Footer";
 //body
 //footer
 
-const items=["https://imgs.search.brave.com/npE0UkPeRXKNXMeo-1oQX_qPQhRq7xX1GrYdIktysNg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmlu/dG8tczMuZGlldHBp/eGVscy5uZXQvMjIy/Ml8xNzc0ODc1NzQz/LmpwZz9xdWFsaXR5/PTcwJmZvcm1hdD13/ZWJwJnc9MTkyMA","https://triprindia.com/cdn/shop/files/BBGRNOS-Z1401.jpg?v=1776334311&width=600","https://triprindia.com/cdn/shop/files/TBLRNOS-D2081_converted.jpg?v=1775461295&width=600"]
+const items=["https://imgs.search.brave.com/npE0UkPeRXKNXMeo-1oQX_qPQhRq7xX1GrYdIktysNg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmlu/dG8tczMuZGlldHBp/eGVscy5uZXQvMjIy/Ml8xNzc0ODc1NzQz/LmpwZz9xdWFsaXR5/PTcwJmZvcm1hdD13/ZWJwJnc9MTkyMA","https://triprindia.com/cdn/shop/files/BBGRNOS-Z1401.jpg?v=1776334311&width=600","https://triprindia.com/cdn/shop/files/TBLRNOS-D2081_converted.jpg?v=1775461295&width=600"];
 
 
 const array = [
-  { cloth: "T-Shirt", offer: "40-80% Off" },
-  { cloth: "T-Shirt", offer: "40-80% Off" },
-  { cloth: "T-Shirt", offer: "40-50% Off" },
-  { cloth: "T-Shirt", offer: "70-90% Off" },
-  { cloth: "T-Shirt", offer: "40-50% Off" },
-  { cloth: "T-Shirt", offer: "40-80% Off" },
-  { cloth: "T-Shirt", offer: "10-20% Off" },
-  { cloth: "T-Shirt", offer: "40-50% Off" },
-  { cloth: "T-Shirt", offer: "10-20% Off" },
-  { cloth: "T-Shirt", offer: "10-20% Off" },
-  { cloth: "T-Shirt", offer: "70-90% Off" },
-  { cloth: "T-Shirt", offer: "70-90% Off" },
-  { cloth: "T-Shirt", offer: "70-90% Off" },
-  { cloth: "T-Shirt", offer: "70-90% Off" },
-  { cloth: "T-Shirt", offer: "10-20% Off" },
-  { cloth: "T-Shirt", offer: "10-20% Off" }
+  { cloth: "T-Shirt", offer: "40-80% Off", price: 499 },
+  { cloth: "T-Shirt", offer: "40-80% Off", price: 899 },
+  { cloth: "T-Shirt", offer: "40-50% Off", price: 599 },
+  { cloth: "T-Shirt", offer: "70-90% Off", price: 299 },
+  { cloth: "T-Shirt", offer: "40-50% Off", price: 699 },
+  { cloth: "T-Shirt", offer: "40-80% Off", price: 799 },
+  { cloth: "T-Shirt", offer: "10-20% Off", price: 1299 },
+  { cloth: "T-Shirt", offer: "40-50% Off", price: 399 },
+  { cloth: "T-Shirt", offer: "10-20% Off", price: 1499 },
+  { cloth: "T-Shirt", offer: "10-20% Off", price: 1199 },
+  { cloth: "T-Shirt", offer: "70-90% Off", price: 349 },
+  { cloth: "T-Shirt", offer: "70-90% Off", price: 249 },
+  { cloth: "T-Shirt", offer: "70-90% Off", price: 199 },
+  { cloth: "T-Shirt", offer: "70-90% Off", price: 299 },
+  { cloth: "T-Shirt", offer: "10-20% Off", price: 999 },
+  { cloth: "T-Shirt", offer: "10-20% Off", price: 1099 }
 ];
 
 const headerele = [
