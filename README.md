@@ -69,10 +69,12 @@ You MUST provide a unique `key` to the outermost element whenever you use `.map(
 
 You DO NOT need keys when you are manually typing out sibling components one by one. React tracks hardcoded elements naturally.
 
-```<div>
+```
+<div>
   <Card data={shirtData} />
   <Card data={pantsData} />
-</div>```
+</div>
+```
 
 HTML Tags vs. CSS Makeup: Trying to use CSS (style={{type: "search"}}) to change a <div> into a text box. Fix: Use Conditional Rendering (if/else) to return the correct HTML bone structure (e.g., <input>).
 
@@ -84,3 +86,39 @@ The HTML Attribute vs CSS Property Trap: Writing cursor="pointer" as a raw HTML 
 
    
 to shift the icons use position relative to shift from relative place
+  
+## If using a select tag use onChange not onClick as Browsers completely ignore clicks on options
+
+
+
+
+# The React Hooks Bible (useState)
+Definition: A special JS function that "hooks" into the React engine to manage memory.
+
+Rule 1 (Top Level): Never put hooks inside if, loops, or nested functions.
+
+Rule 2 (React Only): Only use inside Capitalized Components.
+
+The Golden Rule of State: State is Immutable (Read-Only).
+
+## ❌ Never: count++ or arr.push(). (Direct mutation kills the "Spot the Difference" algorithm).
+
+## ✅ Always: setCount(count + 1) or setArr([...arr, newItem]). (Pass a brand-new "snapshot").
+
+# Events & The Event Object
+The Gift: Every event listener (like onChange) automatically receives an event object.
+
+e.target.value: The most common way to grab data from inputs or selects.
+
+The select Trap: Put onChange on the <select> tag, not onClick on <option> tags.
+
+# Sorting Logic: JS vs. C++
+C++: Expects a Boolean (true/false). a > b works for heaps/priority queues.
+
+JavaScript: Expects a Number (Negative, Positive, or Zero).
+
+Ascending (Low to High): (a, b) => a - b
+
+Descending (High to Low): (a, b) => b - a
+
+### Why? JS uses the sign of the result to decide if it should swap. Returning a Boolean (true) converts to 1, which never allows for a "Negative" signal, breaking the sort.

@@ -1,16 +1,53 @@
 import Card from "./Card";
+import { useState } from "react";
 
 function Body(props) {
+  const [A, setA] = useState(props.arr);
+
+  const handleSort = (event) => {
+    const val = event.target.value;
+    
+    let newArray = [...A]; 
+
+    if (val === 'a') {
+      newArray.sort((a, b) => a.price - b.price);
+      setA(newArray);
+    } else if (val === 'd') {
+      newArray.sort((a, b) => b.price - a.price);
+      setA(newArray);
+    } else if (val === 'reset') {
+      setA(props.arr);
+    }
+  };
+
+  {/* <Card itempic={item[0]} firstdis="40" seconddis="50" />
+<Card itempic={item[1]} firstdis="20" seconddis="80" />
+<Card itempic={item[0]} firstdis="50" seconddis="60" />
+<Card itempic={item[2]} firstdis="50" seconddis="80" />
+<Card itempic={item[1]} firstdis="50" seconddis="60" />
+<Card itempic={item[1]} firstdis="50" seconddis="80" />
+<Card itempic={item[1]} firstdis="20" seconddis="60" />
+<Card itempic={item[2]} firstdis="20" seconddis="80" />
+<Card itempic={item[0]} firstdis="20" seconddis="80" />
+<Card itempic={item[2]} firstdis="50" seconddis="60" />
+<Card itempic={item[1]} firstdis="50" seconddis="80" />
+<Card itempic={item[1]} firstdis="50" seconddis="80" />
+<Card itempic={item[2]} firstdis="50" seconddis="80" /> */}
   return (
+
     <div>
-      <div style={{ height: "20px",padding:"60px 0px 0px 180px"}}>
-        <select>
-          <option value="" disabled selected>
+      <div style={{ height: "20px", padding: "60px 0px 0px 180px" }}>
+        
+        {/* 4. The onChange goes on the select! */}
+        <select defaultValue="default" onChange={handleSort}>
+          <option value="default" disabled>
             Sort By:-
           </option>
-          <option value="low">Price: low to high</option>
-          <option value="high">Price: high to low</option>
+          <option value="a">Price: low to high</option>
+          <option value="d">Price: high to low</option>
+          <option value="reset">Reset</option>
         </select>
+
       </div>
       <div
         style={{
@@ -23,26 +60,13 @@ function Body(props) {
           minHeight: "100vh",
         }}
       >
-        {/* <Card itempic={item[0]} firstdis="40" seconddis="50" />
-          <Card itempic={item[1]} firstdis="20" seconddis="80" />
-          <Card itempic={item[0]} firstdis="50" seconddis="60" />
-          <Card itempic={item[2]} firstdis="50" seconddis="80" />
-          <Card itempic={item[1]} firstdis="50" seconddis="60" />
-          <Card itempic={item[1]} firstdis="50" seconddis="80" />
-          <Card itempic={item[1]} firstdis="20" seconddis="60" />
-          <Card itempic={item[2]} firstdis="20" seconddis="80" />
-          <Card itempic={item[0]} firstdis="20" seconddis="80" />
-          <Card itempic={item[2]} firstdis="50" seconddis="60" />
-          <Card itempic={item[1]} firstdis="50" seconddis="80" />
-          <Card itempic={item[1]} firstdis="50" seconddis="80" />
-          <Card itempic={item[2]} firstdis="50" seconddis="80" /> */}
-
-        {props.arr.map((value, index) => {
+        {A.map((value, index) => {
           return (
             <Card
               key={index}
               itempic={props.item[Math.floor(Math.random() * 3)]}
               discount={value.offer}
+              price={value.price}
             />
           );
         })}
@@ -52,3 +76,4 @@ function Body(props) {
 }
 
 export default Body;
+
