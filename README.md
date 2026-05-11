@@ -122,3 +122,37 @@ Ascending (Low to High): (a, b) => a - b
 Descending (High to Low): (a, b) => b - a
 
 ### Why? JS uses the sign of the result to decide if it should swap. Returning a Boolean (true) converts to 1, which never allows for a "Negative" signal, breaking the sort.
+
+  
+# Controlled Component 
+Controlled components are form elements (like input, textarea, or select) that are managed by React state. React acts as the remote control. The input's value is hard-locked to a React state variable.
+
+```
+import { useState } from "react";
+
+function ControlledInput() {
+  const [text, setText] = useState(""); // React holds the memory
+
+  return (
+    <div>
+      {/* React forces the input to match the state, and updates state on typing */}
+      <input 
+        type="text" 
+        value={text} 
+        onChange={(e) => setText(e.target.value)} 
+      />
+      <p>You typed: {text}</p> {/* UI updates instantly! */}
+    </div>
+  );
+}
+```
+
+## Flow of controlled components in Body.jsx
+  
+The <select> tag is no longer allowed to make its own decisions. It acts like a dumb TV monitor.
+
+The State is the Remote Control: React looks directly at your menuVal state variable.
+
+The Match: React forces the <select> tag to hunt down the <option> that has the exact matching value.
+
+The Display: It paints the text inside that specific <option> onto the screen.
