@@ -108,9 +108,9 @@ The Golden Rule of State: State is Immutable (Read-Only).
 # Events & The Event Object
 The Gift: Every event listener (like onChange) automatically receives an event object.
 
-e.target.value: The most common way to grab data from inputs or selects.
-
-The select Trap: Put onChange on the <select> tag, not onClick on <option> tags.  
+e.target.value: The most common way to grab data from inputs or selects.  
+  
+The select Trap: Put onChange on the select> tag, not onClick on <option> tags.  
 
 # Sorting Logic: JS vs. C++
 C++: Expects a Boolean (true/false). a > b works for heaps/priority queues.
@@ -149,11 +149,11 @@ function ControlledInput() {
   
 ## Flow of controlled components in Body.jsx
     
-The <select> tag is no longer allowed to make its own decisions. It acts like a dumb TV monitor.
+The select tag is no longer allowed to make its own decisions. It acts like a dumb TV monitor.
   
 The State is the Remote Control: React looks directly at your menuVal state variable.
   
-The Match: React forces the <select> tag to hunt down the <option> that has the exact matching value.
+The Match: React forces the select tag to hunt down the option that has the exact matching value.
   
-The Display: It paints the text inside that specific <option> onto the screen.
+The Display: It paints the text inside that specific option onto the screen.
   
