@@ -8,7 +8,7 @@ function Body(props) {
 
   const handleSort = (event) => {
     const val = event.target.value;
-    let newArray = [...A]; 
+    let newArray = [...A]; //this is coz array and all are stored by refernce and if the memory/address of the variable is not changed react will now manipulate the dom in case of number it works as they are stoed by value
     
     setmenuVal(val);
     if (val === 'a') {

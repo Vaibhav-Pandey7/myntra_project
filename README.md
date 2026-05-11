@@ -157,3 +157,12 @@ The Match: React forces the select tag to hunt down the option that has the exac
   
 The Display: It paints the text inside that specific option onto the screen.
   
+# Pass by Value vs. Pass by Reference (The React Memory Rule)
+
+Primitives (Numbers, Strings, Booleans): Stored by Value. React compares the actual data (5 === 6).
+  
+Complex Data (Arrays, Objects): Stored by Reference (Memory Address). React does NOT look inside the array; it only checks if the memory address changed.
+  
+The Trap: Mutating an array (arr.sort()) changes the data inside, but keeps the same memory address. React sees the same address and refuses to update the UI.
+  
+The Fix: Always use the Spread Operator ([...arr]) to create a brand-new memory address so React knows an update happened.
