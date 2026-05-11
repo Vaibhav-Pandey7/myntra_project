@@ -3,12 +3,14 @@ import { useState } from "react";
 
 function Body(props) {
   const [A, setA] = useState(props.arr);
+  const [menuVal, setmenuVal] = useState("default");
+
 
   const handleSort = (event) => {
     const val = event.target.value;
-    
     let newArray = [...A]; 
-
+    
+    setmenuVal(val);
     if (val === 'a') {
       newArray.sort((a, b) => a.price - b.price);
       setA(newArray);
@@ -17,6 +19,7 @@ function Body(props) {
       setA(newArray);
     } else if (val === 'reset') {
       setA(props.arr);
+      setmenuVal("default");
     }
   };
 
@@ -39,7 +42,7 @@ function Body(props) {
       <div style={{ height: "20px", padding: "60px 0px 0px 180px" }}>
         
         {/* 4. The onChange goes on the select! */}
-        <select defaultValue="default" onChange={handleSort}>
+        <select value={menuVal} onChange={handleSort}>
           <option value="default" disabled>
             Sort By:-
           </option>
