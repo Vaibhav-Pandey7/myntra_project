@@ -110,23 +110,23 @@ The Gift: Every event listener (like onChange) automatically receives an event o
 
 e.target.value: The most common way to grab data from inputs or selects.
 
-The select Trap: Put onChange on the <select> tag, not onClick on <option> tags.
+The select Trap: Put onChange on the <select> tag, not onClick on <option> tags.  
 
 # Sorting Logic: JS vs. C++
 C++: Expects a Boolean (true/false). a > b works for heaps/priority queues.
-
-JavaScript: Expects a Number (Negative, Positive, or Zero).
-
-Ascending (Low to High): (a, b) => a - b
-
-Descending (High to Low): (a, b) => b - a
-
-### Why? JS uses the sign of the result to decide if it should swap. Returning a Boolean (true) converts to 1, which never allows for a "Negative" signal, breaking the sort.
-
   
-# Controlled Component 
+JavaScript: Expects a Number (Negative, Positive, or Zero).
+  
+Ascending (Low to High): (a, b) => a - b
+  
+Descending (High to Low): (a, b) => b - a
+  
+### Why? JS uses the sign of the result to decide if it should swap. Returning a Boolean (true) converts to 1, which never allows for a "Negative" signal, breaking the sort.
+  
+  
+# Controlled Component   
 Controlled components are form elements (like input, textarea, or select) that are managed by React state. React acts as the remote control. The input's value is hard-locked to a React state variable.
-
+  
 ```
 import { useState } from "react";
 
@@ -146,13 +146,14 @@ function ControlledInput() {
   );
 }
 ```
-
-## Flow of controlled components in Body.jsx
   
+## Flow of controlled components in Body.jsx
+    
 The <select> tag is no longer allowed to make its own decisions. It acts like a dumb TV monitor.
-
+  
 The State is the Remote Control: React looks directly at your menuVal state variable.
-
+  
 The Match: React forces the <select> tag to hunt down the <option> that has the exact matching value.
-
+  
 The Display: It paints the text inside that specific <option> onto the screen.
+  
