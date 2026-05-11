@@ -4,26 +4,44 @@ import { useState } from "react";
 function Body(props) {
   const [A, setA] = useState(props.arr);
   const [menuVal, setmenuVal] = useState("default");
-
+  const [filterVal, setfilterVal] = useState("default");
 
   const handleSort = (event) => {
     const val = event.target.value;
     let newArray = [...A]; //this is coz array and all are stored by refernce and if the memory/address of the variable is not changed react will now manipulate the dom in case of number it works as they are stoed by value
-    
+
     setmenuVal(val);
-    if (val === 'a') {
+    if (val === "a") {
       newArray.sort((a, b) => a.price - b.price);
       setA(newArray);
-    } else if (val === 'd') {
+    } else if (val === "d") {
       newArray.sort((a, b) => b.price - a.price);
       setA(newArray);
-    } else if (val === 'reset') {
+    } else if (val === "reset") {
       setA(props.arr);
       setmenuVal("default");
     }
   };
 
-  {/* <Card itempic={item[0]} firstdis="40" seconddis="50" />
+  function handleFilter(e){
+    let val=e.target.value;
+    setfilterVal(val);
+
+    if(val==='l'){
+      let temp=props.arr.filter((item,index)=>(item.price)<=500);
+      setA(temp);
+    }else if(val==='g'){
+      let temp=props.arr.filter((item,index)=>(item.price)>500);
+      setA(temp);
+
+    }else if(val==='reset'){
+      setA(props.arr);
+      setfilterVal('default');
+    }
+  }
+
+  {
+    /* <Card itempic={item[0]} firstdis="40" seconddis="50" />
 <Card itempic={item[1]} firstdis="20" seconddis="80" />
 <Card itempic={item[0]} firstdis="50" seconddis="60" />
 <Card itempic={item[2]} firstdis="50" seconddis="80" />
@@ -35,12 +53,11 @@ function Body(props) {
 <Card itempic={item[2]} firstdis="50" seconddis="60" />
 <Card itempic={item[1]} firstdis="50" seconddis="80" />
 <Card itempic={item[1]} firstdis="50" seconddis="80" />
-<Card itempic={item[2]} firstdis="50" seconddis="80" /> */}
+<Card itempic={item[2]} firstdis="50" seconddis="80" /> */
+  }
   return (
-
     <div>
-      <div style={{ height: "20px", padding: "60px 0px 0px 180px" }}>
-        
+      <div style={{ height: "20px", padding: "60px 0px 0px 180px",display:"inline-block" }}>
         {/* 4. The onChange goes on the select! */}
         <select value={menuVal} onChange={handleSort}>
           <option value="default" disabled>
@@ -50,7 +67,17 @@ function Body(props) {
           <option value="d">Price: high to low</option>
           <option value="reset">Reset</option>
         </select>
+      </div>
 
+      <div style={{ height: "20px", padding: "6px 0px 0px 45px",display:"inline-block" ,marginLeft:"0px"}}>
+        <select value={filterVal} onChange={handleFilter}>
+          <option value="default" disabled>
+            Filter:-
+          </option>
+          <option value="l">Price: less than 500</option>
+          <option value="g">Price: more than 500</option>
+          <option value="reset">Reset</option>
+        </select>
       </div>
       <div
         style={{
@@ -60,7 +87,7 @@ function Body(props) {
           gap: "20px",
           padding: "50px 100px 50px 100px",
           width: "100%",
-          minHeight: "100vh",
+          minHeight: "auto",
         }}
       >
         {A.map((value, index) => {
@@ -79,4 +106,3 @@ function Body(props) {
 }
 
 export default Body;
-
